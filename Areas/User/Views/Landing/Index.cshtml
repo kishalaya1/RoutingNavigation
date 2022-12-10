@@ -1,4 +1,5 @@
-﻿@*
+﻿@model LoginViewModel
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -7,4 +8,9 @@
     ViewData["Title"] = "User";
 }
 
-<h1>User page</h1>
+<h1>Dashboard for User</h1>
+
+<input type="hidden" maxlength="50" asp-for="UserName" class="form-control" />
+<input type="hidden" maxlength="50" asp-for="Password" class="form-control" />
+
+<a asp-area="" asp-action="Login" asp-controller="Account" class="btn-large">Back to LogIn</a>

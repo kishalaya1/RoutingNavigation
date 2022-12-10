@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+
 using RoutingNavigation.Models;
+using System.Text.Json;
 
 namespace RoutingNavigation.Controllers
 {
@@ -17,17 +18,24 @@ namespace RoutingNavigation.Controllers
             {
                 if (model.UserName == "admin@gmail.com" && model.Password == "12345678")
                 {
-                    return RedirectToAction("Index", "Home", new { Area = "Admin" });
+                    return RedirectToAction("Index", "Landing", new { Area = "Admin" });
                 }
-                else if(model.UserName == "user@gmail.com" && model.Password == "12345678")
+                else if (model.UserName == "user@gmail.com" && model.Password == "12345678")
                 {
-                    return RedirectToAction("Index", "Home", new { Area = "User" });
+                    
+                    return RedirectToAction("Index", "Landing", new { Area = "User" });
                 }
                 else
                 {
                     return View();
                 }
             }
+            return View();
+        }
+
+        [HttpGet]
+        public ViewResult LogOut()
+        {
             return View();
         }
     }

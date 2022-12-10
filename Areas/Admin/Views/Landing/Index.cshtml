@@ -1,0 +1,18 @@
+﻿@model RoutingNavigation.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "dmin";
+}
+
+
+
+<div>
+    <h4>Dashboard for Admin</h4>
+    <hr />
+
+    <input type="hidden" maxlength="50" asp-for="UserName" class="form-control" />
+    <input type="hidden" maxlength="50" asp-for="Password" class="form-control" />
+</div>
+<div>  
+    <a asp-area="" asp-action="Login" asp-controller="Account" class="btn-large">Back to LogIn</a>
+</div>
